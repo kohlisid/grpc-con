@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package pingpong;
+
+// Specify the Go package where the generated code will be placed.
+option go_package = "github.com/kohlisid/grpc-con/pingpong";
+
+// The ping pong service definition.
+service PingPongService {
+  // Sends a ping and receives a pong.
+  rpc PingPong(Ping) returns (Pong);
+}
+
+// The request message containing the ping data.
+message Ping {
+  string message = 1;
+}
+
+// The response message containing the pong data.
+message Pong {
+  string message = 1;
+}
